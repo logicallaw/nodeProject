@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const dotenv=require('dotenv'); //process.env관리 패키지
 const path = require('path');
+//
 
 dotenv.config();
 const router = require('./routers/router.js');
