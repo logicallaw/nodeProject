@@ -26,10 +26,24 @@ async function crawing() {
 
 async function main(){
     let arrayTitle = await crawing();
-    const h1 = document.querySelector('h1');
-    for (let i = 0; i < arrayTitle.length; i++){
-        const title = document.createElement('p');
-        title.innerText = arrayTitle[i];
-        h1.appendChild(title);
-    }
+    // const h1 = document.querySelector('h1');
+    // for (let i = 0; i < arrayTitle.length; i++){
+    //     const title = document.createElement('p');
+    //     title.innerText = arrayTitle[i];
+    //     h1.appendChild(title);
+    // }
+    return arrayTitle;
 }
+
+let crawling;
+main()
+    .then((arrayTitle)=>{
+        arrayTitle.forEach((title, index)=>{
+            crawing[index] = title;
+        })
+        console.log(crawing);
+    })
+    .catch((err)=>
+        console.error(err));
+
+module.exports = crawing;
