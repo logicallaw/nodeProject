@@ -8,6 +8,12 @@
 </head>
 <body>
     <div class="main">
+        <div class="grid-container">
+            <h1>공지사항</h1>
+            {% for title in titles %}
+                <div class="grid-item">{{title}}</div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

@@ -11,7 +11,7 @@ dotenv.config();
 const router = require('./routers/router.js');
 const app = express(); //express객체 생성 : app
 
-app.set('port', process.env.PORT || 8006);
+app.set('port', process.env.PORT || 8000);
 app.set('view engine', 'html');
 nunjucks.configure('views', {
     express : app,

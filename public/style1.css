@@ -1,0 +1,9 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 100px 100px; /*열 개수 및 크기 선언*/
+    grid-template-rows: 100px 100px; /*행 개수 및 크기 선언*/
+}
+.grid-item{
+    color:white;
+    background-color: #ff5252;
+}

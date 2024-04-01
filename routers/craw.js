@@ -14,36 +14,21 @@ async function crawing() {
 
     //tr태그들을 순회하면서 strong태그를 만나면 arrayTitle배열에 push해서 저장한다.
     const posts = await page.$$(selector);
-    let arrayTitle = [];
+    let arrayTitles = [];
     for (const post of posts) {
         const title = await post.$eval('strong', (e) => e.innerText);
-            arrayTitle.push(title);
+            arrayTitles.push(title);
             // console.log(title)
     }
     await broswer.close();
-    return arrayTitle;
+    return arrayTitles;
 }
 
 async function main(){
-    let arrayTitle = await crawing();
-    // const h1 = document.querySelector('h1');
-    // for (let i = 0; i < arrayTitle.length; i++){
-    //     const title = document.createElement('p');
-    //     title.innerText = arrayTitle[i];
-    //     h1.appendChild(title);
-    // }
-    return arrayTitle;
+    const arrayTitles = await crawing();
+    return arrayTitles;
 }
 
-let crawling;
-main()
-    .then((arrayTitle)=>{
-        arrayTitle.forEach((title, index)=>{
-            crawing[index] = title;
-        })
-        console.log(crawing);
-    })
-    .catch((err)=>
-        console.error(err));
-
-module.exports = crawing;
+module.exports = {
+    main
+}
